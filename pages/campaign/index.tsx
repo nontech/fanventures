@@ -4,7 +4,8 @@ import type { NextPageWithLayout } from '../_app'
 import React from 'react'
 
 const Page: NextPageWithLayout = () => {
-  return <p> Campaign Page </p>
+  // content of this page - handled by <SideNav> inside <Layout>
+  return <></>
 }
 
 Page.getLayout = function getLayout(page: ReactElement) {

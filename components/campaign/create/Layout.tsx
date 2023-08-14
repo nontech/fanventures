@@ -1,15 +1,21 @@
+import React, { useState } from 'react';
+
 // components
-import TopNav from './TopNav'
+import TopNav from '../../common/Navbar'
 import SideNav from './SideNav'
 import Footer from '../../common/Footer'
 
-import React, { useState } from 'react';
-
+// main content components
+import Basics from './steps/Basics'
+import Connect from './steps/Connect'
 
 // style
 import styles from './Layout.module.css';
  
 export default function Layout({ children }) {
+
+  const [activeContent, setActiveContent] = useState("Basics");
+
   return (
     <div className={`${styles.layout}`}>
       
@@ -18,15 +24,17 @@ export default function Layout({ children }) {
         <TopNav />
       </div>
 
-      {/* <div className="flex flex-col flex-1"> */}
       <div className={`flex`}>
 
         {/* Side Navigation */}
-        <SideNav />
+        <SideNav setActiveContent={setActiveContent} />
 
         {/* Main content */}
         <main>
           {children}
+          {/* Additional content based on activeContent */}
+          {activeContent === "Basics" && <Basics />}
+          {activeContent === "Connect" && <Connect />}
         </main>
 
       </div>
