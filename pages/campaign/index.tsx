@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react'
-import Layout from '../../components/campaign/Layout'
+import Layout from '../../components/campaign/create/Layout'
 import type { NextPageWithLayout } from '../_app'
 import React from 'react'
 

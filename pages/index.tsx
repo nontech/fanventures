@@ -83,6 +83,7 @@ const Page: NextPageWithLayout = () => {
   )
 }
 
+// page level layout
 Page.getLayout = function getLayout(page: ReactElement) {
   return <Layout>{page}</Layout>
 }
