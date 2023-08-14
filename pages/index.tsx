@@ -63,8 +63,24 @@ import type { ReactElement } from 'react'
 import Layout from '../components/landing_page/Layout'
 import type { NextPageWithLayout } from './_app'
 
+import Hero from '../components/landing_page/sections/Hero'
+import Metrics from '../components/landing_page/sections/Metrics'
+import TrendingNow from '../components/landing_page/sections/TrendingNow'
+import HowItWorks from '../components/landing_page/sections/HowItWorks'
+import Benefits from '../components/landing_page/sections/Benefits'
+import Subscribe from '../components/landing_page/sections/Subscribe'
+
 const Page: NextPageWithLayout = () => {
-  return <p>Home page of landing Page</p>
+  return (
+    <>
+      <Hero />
+      <Metrics />
+      <TrendingNow />
+      <HowItWorks />
+      <Benefits />
+      <Subscribe />
+    </>
+  )
 }
 
 Page.getLayout = function getLayout(page: ReactElement) {
