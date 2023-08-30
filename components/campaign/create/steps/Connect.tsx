@@ -49,6 +49,7 @@ const Connect = () => {
       </div>
     </div>
     
+    {/* Divider */}
     <div className="mt-24 my-4 border-t border-gray-300"></div>
 
     {/* Connected Account */}
@@ -86,7 +87,7 @@ const Connect = () => {
     <div className="flex justify-end mt-10">
       <PrimaryButton name="Save & Continue" />
     </div>
-    
+
   </div>
   );
 };
