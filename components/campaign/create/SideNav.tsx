@@ -26,13 +26,18 @@ const SideNav = ({ setActiveContent }: SideNavProps) => {
           </a>
         </li>
         <li className="mb-4">
-          <a href="#" className="block hover:text-blue-500">Documents</a>
-        </li>
-        <li className="mb-4">
-          <a href="#" className="block hover:text-blue-500">Conversion</a>
+        <a className="block hover:text-blue-500"
+             onClick={() => handleNavClick("Verify")}
+          >
+            Verify
+          </a>
         </li>
         <li>
-          <a href="#" className="block hover:text-blue-500">Funding</a>
+        <a className="block hover:text-blue-500"
+             onClick={() => handleNavClick("Funding")}
+          >
+            Funding
+          </a>
         </li>
       </ul>
     </nav>

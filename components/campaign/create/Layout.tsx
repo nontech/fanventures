@@ -8,6 +8,8 @@ import Footer from '../../common/Footer'
 // main content components
 import Basics from './steps/Basics'
 import Connect from './steps/Connect'
+import Verify from './steps/Verify'
+import Funding from './steps/Funding'
 
 // style
 import styles from './Layout.module.css';
@@ -30,11 +32,13 @@ export default function Layout({ children }) {
         <SideNav setActiveContent={setActiveContent} />
 
         {/* Main content */}
-        <main>
+        <main className="w-full">
           {children}
           {/* Additional content based on activeContent */}
           {activeContent === "Basics" && <Basics />}
           {activeContent === "Connect" && <Connect />}
+          {activeContent === "Verify" && <Verify />}
+          {activeContent === "Funding" && <Funding />}
         </main>
 
       </div>
