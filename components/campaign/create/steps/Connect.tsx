@@ -1,48 +1,58 @@
+import PageTitle from '../../../common/PageTitle'
+import PrimaryButton from '../../../common/buttons/PrimaryButton'
+
 const Connect = () => {
+
+  const LabelStyle = "block text-sm font-medium leading-6"
+  const LabelDescriptionStyle = "text-sm leading-6 text-gray-500 mb-2"
+  const AccountIconStyle = "col-span-1 h-30 flex justify-center items-center bg-black border border-white"
+
+
   return (
-  <>
-    <h1>Connect Page</h1>
-    <div className="grid grid-cols-3 gap-6">
-      {/* Income Sources */}
-      <div className="col-span-full">
-          <label htmlFor="username" className="block text-sm font-medium leading-6">
-            Find your income sources*
-          </label>
-          <div className="mt-2">
-            <div className="flex rounded-md bg-white shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-              <input
-                type="text"
-                name="title"
-                id="title"
-                autoComplete="username"
-                className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                placeholder="janesmith"
-              />
-            </div>
-          </div>
-        </div>
-      <div className="col-span-1 bg-black border border-white">
-        <img src="./campaign/connect/YT_icon.png" />
-      </div>
-      <div className="col-span-1 bg-black border border-white">
-        <img src="./campaign/connect/patreon_icon.png" />
-      </div>
-      <div className="col-span-1 bg-black border border-white">
-        <img src="./campaign/connect/shopify_icon.png" />
-      </div>
-      <div className="col-span-1 bg-black border border-white">
-        <img src="./campaign/connect/discord_icon.webp" />
-      </div>
-      <div className="col-span-1 bg-black border border-white">
-        <img src="./campaign/connect/instagram_icon.jpeg" />
-      </div>
-      <div className="col-span-1 bg-black border border-white">
-        <img src="./campaign/connect/tiktok_icon.png" />
+  <div className="p-20 w-3/5">
+    <PageTitle title="Connect" />
+
+    {/* Income Sources */}
+    <div className="mt-10 mb-10">
+      <label htmlFor="title" className={LabelStyle}>Find your income sources</label>
+      <p className={LabelDescriptionStyle}>Connect all your monetization platforms to verify your income sources.</p>
+      <div className="flex rounded-md bg-white shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+        <input
+          type="text"
+          name="title"
+          id="title"
+          className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+          placeholder='Search: YouTube, Twitch, Patreon etc. '        
+        />
       </div>
     </div>
 
+    {/* Grid Container */}
+    <div className="grid grid-cols-3 gap-6 h-fit">
+      <div className={AccountIconStyle}>
+        <img src="./campaign/connect/YT_icon.png" />
+      </div>
+      <div className={AccountIconStyle}>
+        <img src="./campaign/connect/patreon_icon.png" />
+      </div>
+      <div className={AccountIconStyle}>
+        <img src="./campaign/connect/shopify_icon.png" />
+      </div>
+      <div className={AccountIconStyle}>
+        <img src="./campaign/connect/discord_icon.webp" />
+      </div>
+      <div className={AccountIconStyle}>
+        <img src="./campaign/connect/instagram_icon.jpeg" />
+      </div>
+      <div className={AccountIconStyle}>
+        <img src="./campaign/connect/tiktok_icon.png" />
+      </div>
+    </div>
+    
+    <div className="mt-24 my-4 border-t border-gray-300"></div>
+
     {/* Connected Account */}
-    <div className="flex justify-between mt-10">
+    <div className="flex justify-between mt-10 mb-5">
       <div>Connected Accounts</div>
       <div>+ Add another account</div>
     </div>
@@ -72,10 +82,12 @@ const Connect = () => {
       </div>
     </div>
 
-    <div className="flex justify-end mt-10 mr-10">
-      <button className="bg-blue-500 text-white px-4 py-2 rounded-md">Save & Continue</button>
+    {/* Save & Continue */}
+    <div className="flex justify-end mt-10">
+      <PrimaryButton name="Save & Continue" />
     </div>
-  </>
+    
+  </div>
   );
 };
 
