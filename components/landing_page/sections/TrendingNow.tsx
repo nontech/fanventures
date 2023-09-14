@@ -41,8 +41,8 @@ const data = [
 
 export default function TrendingNow() {
   return (
-    <>
-      <h1 className="text-center w-full my-10 text-4xl font-bold">Trending Now</h1>
+    <div>
+      <div className="text-center text-4xl font-bold mb-10">Trending Now</div>
       {data.map(item => (
         <div className="max-w-md mx-auto relative rounded-lg shadow-md overflow-hidden bg-[#484860] text-white">
           
@@ -103,6 +103,6 @@ export default function TrendingNow() {
         </div>
       ))}
       <button className="block mx-auto my-10 bg-blue-500 text-white px-4 py-2 rounded-md">view all campaigns</button>
-    </>
+    </div>
   );
 }

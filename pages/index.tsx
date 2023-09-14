@@ -72,14 +72,14 @@ import Subscribe from '../components/landing_page/sections/Subscribe'
 
 const Page: NextPageWithLayout = () => {
   return (
-    <>
+    <div className="p-40">
       <Hero />
       <Metrics />
       <TrendingNow />
       <HowItWorks />
       <Benefits />
       <Subscribe />
-    </>
+    </div>
   )
 }
 
