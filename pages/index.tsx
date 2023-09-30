@@ -16,8 +16,8 @@ import Hero from '../components/landing_page_v2/sections/Hero'
 import ContentCreators from '../components/landing_page_v2/sections/ContentCreators'
 import Fans from '../components/landing_page_v2/sections/Fans'
 import Benefits from '../components/landing_page_v2/sections/Benefits'
-import JoinUs from '../components/landing_page_v2/sections/JoinUs'
-import FAQ from '../components/landing_page_v2/sections/FAQ'
+import CategoryCards from '../components/landing_page_v2/sections/JoinUs'
+// import FAQ from '../components/landing_page_v2/sections/FAQ'
 import Subscribe from '../components/landing_page_v2/sections/Subscribe'
 import ContactUs from '../components/landing_page_v2/sections/ContactUs'
 import SocialMedia from '../components/landing_page_v2/sections/SocialMedia'
@@ -39,8 +39,8 @@ const Page: NextPageWithLayout = () => {
       <ContentCreators />
       <Fans />
       <Benefits />
-      <JoinUs />
-      <FAQ />
+      <CategoryCards />
+      {/* <FAQ /> */}
       <Subscribe />
       <ContactUs />
       <SocialMedia />
