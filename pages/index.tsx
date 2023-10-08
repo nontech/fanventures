@@ -11,21 +11,39 @@ import type { NextPageWithLayout } from './_app'
 // import Subscribe from '../components/landing_page/sections/Subscribe'
 
 // Components -> Landing page V2
+
+// This layout just consists children and not navbar or footer
+// Navbar & Footer as separate components, not inside Layout
 import Layout from '../components/landing_page_v2/Layout'
+
+// Section 1
+import Navbar from '../components/landing_page_v2/sections/Navbar'
+// Section 2
 import Hero from '../components/landing_page_v2/sections/Hero'
-import ContentCreators from '../components/landing_page_v2/sections/ContentCreators'
-import Fans from '../components/landing_page_v2/sections/Fans'
+
+// The following 3 sections were combined & replaced by an image file (see below)
+// How it works for ContentCreators
+// import ContentCreators from '../components/landing_page_v2/sections/ContentCreators'
+// How it works for Fans
+// import Fans from '../components/landing_page_v2/sections/Fans'
+// Join Us aka CategoryCards
+// import CategoryCards from '../components/landing_page_v2/sections/CategoryCards'
+
+// Section 3: Sneak Peek (Image file)
+import SneakPeek from '../components/landing_page_v2/sections/SneakPeek'
+// Section 4: Platform Benefits
 import Benefits from '../components/landing_page_v2/sections/Benefits'
-import CategoryCards from '../components/landing_page_v2/sections/JoinUs'
-// import FAQ from '../components/landing_page_v2/sections/FAQ'
-import Subscribe from '../components/landing_page_v2/sections/Subscribe'
+// Section 5
 import ContactUs from '../components/landing_page_v2/sections/ContactUs'
-import SocialMedia from '../components/landing_page_v2/sections/SocialMedia'
+// Section 6: Contains social media links & subscribe
 import Footer from '../components/landing_page_v2/sections/Footer'
+// import Subscribe from '../components/landing_page_v2/sections/Subscribe'
+// import SocialMedia from '../components/landing_page_v2/sections/SocialMedia'
+
 
 const Page: NextPageWithLayout = () => {
   return (
-    <div className="p-40">
+    <div className="pr-40 pl-40">
       {/* Landing Page v1 */}
       {/* <Hero />
       <Metrics />
@@ -35,16 +53,18 @@ const Page: NextPageWithLayout = () => {
       <Subscribe /> */}
 
       {/* Landing Page v2 */}
+      <Navbar />
       <Hero />
-      <ContentCreators />
-      <Fans />
+      {/* <ContentCreators /> */}
+      {/* <Fans />   */}
+      <SneakPeek />
       <Benefits />
-      <CategoryCards />
+      {/* <CategoryCards /> */}
       {/* <FAQ /> */}
-      <Subscribe />
       <ContactUs />
-      <SocialMedia />
       <Footer />
+      {/* <Subscribe /> */}
+      {/* <SocialMedia /> */}
     </div>
   )
 }
