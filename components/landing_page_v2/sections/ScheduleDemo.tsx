@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import { PopupModal } from 'react-calendly';
+
+// Define the type for PopupModal's props
+type PopupModalProps = React.ComponentProps<typeof PopupModal>;
 
 declare global {
   interface Window {
@@ -10,7 +14,7 @@ declare global {
   }
 }
 
-const PopupModal = dynamic(() => import('react-calendly').then((mod) => mod.PopupModal), {
+const DynamicPopupModal = dynamic<PopupModalProps>(() => import('react-calendly').then((mod) => mod.PopupModal), {
   ssr: false,
 });
 
@@ -32,12 +36,6 @@ const ScheduleDemo: React.FC = () => {
     }
   }, []);
 
-  const openCalendlyPopup = () => {
-    if (typeof window !== 'undefined' && window.Calendly) {
-      window.Calendly.initPopupWidget({ url: 'https://calendly.com/acmesales' });
-    }
-  };
-
   return (
     <div>
       <button
@@ -47,7 +45,7 @@ const ScheduleDemo: React.FC = () => {
         Schedule Demo
       </button>
       {typeof window !== 'undefined' && (
-        <PopupModal
+        <DynamicPopupModal
           url="https://calendly.com/fanventures/30min"
           onModalClose={() => setIsOpen(false)}
           open={isOpen}
