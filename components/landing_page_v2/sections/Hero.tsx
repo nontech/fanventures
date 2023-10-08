@@ -2,9 +2,10 @@ const text = {
   title_1: "Invest In Your Favorite",
   title_2: "Content Creators",
   tagline: "FANVENTURES unites creators and fans to build success together",
-  start_campaign_btn: "Schedule Demo",
   explore_btn: "Contact us"
 }
+
+import ScheduleDemo from "./ScheduleDemo";
 
 const HeroSection = () => {
   return (
@@ -15,7 +16,7 @@ const HeroSection = () => {
       <p className="text-base mb-8 text-primary/80">{text.tagline}</p>
       {/* Row 3: Action Buttons */}
       <section className="space-x-4">
-        <button className="bg-secondary text-white px-4 py-2 rounded-md">{text.start_campaign_btn}</button>
+        <ScheduleDemo />
         <button className="text-primary px-4 py-2 border-2 rounded-lg border-primary/20">{text.explore_btn}</button>
       </section>
     </div>
