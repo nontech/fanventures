@@ -21,7 +21,7 @@ import CategoryCards from '../components/landing_page_v2/sections/JoinUs'
 import Subscribe from '../components/landing_page_v2/sections/Subscribe'
 import ContactUs from '../components/landing_page_v2/sections/ContactUs'
 import SocialMedia from '../components/landing_page_v2/sections/SocialMedia'
-
+import Footer from '../components/landing_page_v2/sections/Footer'
 
 const Page: NextPageWithLayout = () => {
   return (
@@ -44,6 +44,7 @@ const Page: NextPageWithLayout = () => {
       <Subscribe />
       <ContactUs />
       <SocialMedia />
+      <Footer />
     </div>
   )
 }
