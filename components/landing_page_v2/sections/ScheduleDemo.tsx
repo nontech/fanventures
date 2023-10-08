@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import Head from 'next/head';
+import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 
 declare global {
   interface Window {
@@ -10,40 +10,51 @@ declare global {
   }
 }
 
-const ScheduleDemo = () => {
-  useEffect(() => {
-    // Load Calendly widget script asynchronously
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
+const PopupModal = dynamic(() => import('react-calendly').then((mod) => mod.PopupModal), {
+  ssr: false,
+});
 
-    // Clean up script when the component unmounts
-    return () => {
-      document.body.removeChild(script);
-    };
+const ScheduleDemo: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Load Calendly widget script asynchronously
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      document.body.appendChild(script);
+
+      // Clean up script when the component unmounts
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
   }, []);
 
   const openCalendlyPopup = () => {
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({ url: 'https://calendly.com/fanventures/30min' });
+    if (typeof window !== 'undefined' && window.Calendly) {
+      window.Calendly.initPopupWidget({ url: 'https://calendly.com/acmesales' });
     }
   };
 
   return (
-    <>
-      <Head>
-        <script src="https://assets.calendly.com/assets/external/widget.js"></script>
-      </Head>
-      <div>
-        <button
-          className="bg-secondary text-white px-4 py-2 rounded-md"
-          onClick={openCalendlyPopup}
-        >
-          Schedule Demo
-        </button>
-      </div>
-    </>
+    <div>
+      <button
+        className="bg-secondary text-white px-4 py-2.5 rounded-lg"
+        onClick={() => setIsOpen(true)}
+      >
+        Schedule Demo
+      </button>
+      {typeof window !== 'undefined' && (
+        <PopupModal
+          url="https://calendly.com/fanventures/30min"
+          onModalClose={() => setIsOpen(false)}
+          open={isOpen}
+          rootElement={document.getElementById('__next')} // Make sure 'root' exists, root in Nextjs is '__next'
+        />
+      )}
+    </div>
   );
 };
 

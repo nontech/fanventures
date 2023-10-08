@@ -15,7 +15,7 @@ const HeroSection = () => {
       {/* Row 2: Tagline */}
       <p className="text-base mb-8 text-primary/80">{text.tagline}</p>
       {/* Row 3: Action Buttons */}
-      <section className="space-x-4">
+      <section className="flex space-x-4 justify-center">
         <ScheduleDemo />
         <button className="text-primary px-4 py-2 border-2 rounded-lg border-primary/20">{text.explore_btn}</button>
       </section>
