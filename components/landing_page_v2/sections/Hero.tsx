@@ -5,6 +5,7 @@ const text = {
   explore_btn: "Contact us"
 }
 
+import ContactUsButton from "./ContactUsButton";
 import ScheduleDemo from "./ScheduleDemo";
 
 const HeroSection = () => {
@@ -17,7 +18,8 @@ const HeroSection = () => {
       {/* Row 3: Action Buttons */}
       <section className="flex space-x-4 justify-center">
         <ScheduleDemo />
-        <button className="text-primary px-4 py-2 border-2 rounded-lg border-primary/20">{text.explore_btn}</button>
+        {/* <button className="text-primary px-4 py-2 border-2 rounded-lg border-primary/20">{text.explore_btn}</button> */}
+        <ContactUsButton />
       </section>
     </div>
   );
